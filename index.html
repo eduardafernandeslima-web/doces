@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spooky Treat 🎃 | Confeitaria de Halloween</title>
+<style>
+  /* ===== RESET ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ===== VARIÁVEIS ===== */
+  :root {
+    --laranja: #ff7b00;
+    --laranja-escuro: #d95f00;
+    --roxo: #6a1b9a;
+    --roxo-escuro: #2e0a3f;
+    --preto: #121012;
+    --cinza-escuro: #1e1a1f;
+    --branco: #fff5e6;
+    --verde: #8bc34a;
+    --sombra: rgba(0, 0, 0, 0.6);
+  }
+
+  /* ===== CORPO ===== */
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: var(--preto);
+    color: var(--branco);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: linear-gradient(135deg, var(--roxo-escuro), var(--preto));
+    padding: 20px 0;
+    border-bottom: 3px solid var(--laranja);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px var(--sombra);
+  }
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--laranja);
+    text-shadow: 0 0 10px var(--laranja), 0 0 20px var(--laranja-escuro);
+    animation: flicker 3s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 100% { text-shadow: 0 0 10px var(--laranja), 0 0 20px var(--laranja-escuro); }
+    50% { text-shadow: 0 0 5px var(--laranja), 0 0 10px var(--laranja-escuro); }
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-size: 1rem;
+  }
+
+  nav a:hover {
+    color: var(--laranja);
+    text-shadow: 0 0 8px var(--laranja);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(106, 27, 154, 0.4), transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 123, 0, 0.3), transparent 50%),
+      var(--cinza-escuro);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "🎃 🦇 👻 🕷️ 🍬 🧙‍♀️";
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    font-size: 2rem;
+    opacity: 0.15;
+    letter-spacing: 40px;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--laranja);
+    text-shadow: 2px 2px 0 var(--roxo), 0 0 30px var(--laranja-escuro);
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #e0d5c0;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--laranja);
+    color: var(--preto);
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    box-shadow: 0 0 20px rgba(255, 123, 0, 0.5);
+  }
+
+  .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: var(--laranja-escuro);
+    box-shadow: 0 0 35px var(--laranja);
+  }
+
+  /* ===== SEÇÕES ===== */
+  section {
+    padding: 70px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--laranja);
+    text-shadow: 0 0 15px rgba(255, 123, 0, 0.5);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: #b0a89a;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+  }
+
+  /* ===== GRID DE PRODUTOS ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: linear-gradient(145deg, var(--cinza-escuro), #2a242c);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 123, 0, 0.1), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: var(--laranja);
+    box-shadow: 0 10px 30px rgba(255, 123, 0, 0.3);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card .emoji {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .card h3 {
+    color: var(--laranja);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    color: #b0a89a;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .price {
+    display: inline-block;
+    background: var(--roxo);
+    color: var(--branco);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  /* ===== SOBRE ===== */
+  #sobre {
+    background: var(--roxo-escuro);
+    border-radius: 20px;
+    padding: 60px 40px;
+    margin: 40px auto;
+    border: 2px dashed var(--laranja);
+  }
+
+  #sobre p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #e0d5c0;
+  }
+
+  /* ===== DEPOIMENTOS ===== */
+  .depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .depoimento {
+    background: var(--cinza-escuro);
+    border-left: 4px solid var(--laranja);
+    padding: 25px;
+    border-radius: 10px;
+    font-style: italic;
+  }
+
+  .depoimento .autor {
+    display: block;
+    margin-top: 15px;
+    color: var(--laranja);
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* ===== CONTATO ===== */
+  #contato {
+    text-align: center;
+  }
+
+  .contato-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .contato-info div {
+    background: var(--cinza-escuro);
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 2px solid var(--roxo);
+  }
+
+  .contato-info span {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--roxo-escuro);
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 3px solid var(--laranja);
+    margin-top: 60px;
+  }
+
+  footer p {
+    color: #b0a89a;
+  }
+
+  footer .social {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    letter-spacing: 15px;
+  }
+
+  /* ===== RESPONSIVO ===== */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.3rem; }
+    .hero p { font-size: 1.1rem; }
+    .section-title { font-size: 2rem; }
+    nav ul { gap: 15px; }
+    .header-content { justify-content: center; text-align: center; }
+    #sobre { padding: 40px 25px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-content">
+    <div class="logo">🎃 Spooky Treat</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#produtos">Doces</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <h1>Doces que assombram o paladar</h1>
+  <p>Bem-vindo à Spooky Treat, a confeitaria mais arrepiante do Halloween! Cupcakes, bolos, brigadeiros e guloseimas assustadoramente deliciosas feitas com amor e um toque de magia.</p>
+  <a href="#produtos" class="btn">🍬 Ver Doces</a>
+</section>
+
+<!-- ===== PRODUTOS ===== -->
+<section id="produtos">
+  <h2 class="section-title">Nossos Doces Assombrados</h2>
+  <p class="section-subtitle">Cada mordida é um susto de sabor!</p>
+
+  <div class="grid">
+    <div class="card">
+      <span class="emoji">🧁</span>
+      <h3>Cupcake Abóbora</h3>
+      <p>Cupcake de abóbora com cobertura de cream cheese e detalhes em chocolate derretido.</p>
+      <span class="price">R$ 12,00</span>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🍰</span>
+      <h3>Bolo Cemitério</h3>
+      <p>Bolo de chocolate com lápides de biscoito e "terra" de farofa de chocolate.</p>
+      <span class="price">R$ 89,00</span>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🍬</span>
+      <h3>Brigadeiro Fantasma</h3>
+      <p>Brigadeiros brancos decorados com olhinhos de chocolate. Fofos e deliciosos!</p>
+      <span class="price">R$ 25,00 (cx c/ 12)</span>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🕷️</span>
+      <h3>Cookies Aranha</h3>
+      <p>Cookies de chocolate com teias de açúcar e aranhinhas de fondant.</p>
+      <span class="price">R$ 8,00</span>
+    </div>
+
+    <div class="card">
+      <span class="emoji">👻</span>
+      <h3>Suspiros Fantasma</h3>
+      <p>Suspiros crocantes com formato de fantasminhas e recheio de leite condensado.</p>
+      <span class="price">R$ 18,00</span>
+    </div>
+
+    <div class="card">
+      <span class="emoji">🎃</span>
+      <h3>Torta Abóbora</h3>
+      <p>Torta cremosa de abóbora com especiarias e cobertura de chantilly arrepiante.</p>
+      <span class="price">R$ 65,00</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<div id="sobre">
+  <h2 class="section-title">Nossa História Assombrosa</h2>
+  <p>A Spooky Treat nasceu do sonho de transformar o Halloween em uma experiência doce e inesquecível. Desde 2020, criamos guloseimas artesanais que combinam sabor, criatividade e aquele toque de terror que só o Halloween tem!</p>
+  <p>Cada doce é feito à mão, com ingredientes selecionados e muito carinho (e um pouquinho de magia negra da confeitaria 🧙‍♀️).</p>
+</div>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section id="depoimentos">
+  <h2 class="section-title">O que dizem nossos clientes</h2>
+  <p class="section-subtitle">Sustos de alegria garantidos!</p>
+
+  <div class="depoimentos">
+    <div class="depoimento">
+      "Os cupcakes de abóbora são de outro mundo! Literalmente assombrosos de tão bons."
+      <span class="autor">— Mariana S.</span>
+    </div>
+    <div class="depoimento">
+      "Encomendei o bolo cemitério para a festa e todos amaram! Virou atração principal."
+      <span class="autor">— Pedro L.</span>
+    </div>
+    <div class="depoimento">
+      "Os suspiros fantasma são fofos demais! Já virei cliente fiel da Spooky Treat."
+      <span class="autor">— Camila R.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section id="contato">
+  <h2 class="section-title">Fale Conosco</h2>
+  <p class="section-subtitle">Encomendas e orçamentos!</p>
+
+  <div class="contato-info">
+    <div>
+      <span>📱</span>
+      (11) 99999-0000
+    </div>
+    <div>
+      <span>✉️</span>
+      contato@spookytreat.com
+    </div>
+    <div>
+      <span>📍</span>
+      Rua das Bruxas, 13 - São Paulo
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="social">🎃 🦇 👻 🕷️</div>
+  <p>© 2025 Spooky Treat — Confeitaria de Halloween. Todos os direitos reservados.</p>
+  <p style="margin-top: 10px; font-size: 0.85rem;">Feito com 🧡 e um toque de magia assustadora.</p>
+</footer>
+
+
+</body>
+</html>
